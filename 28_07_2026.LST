@@ -1,0 +1,105 @@
+
+SQL> CREATE TABLE usman33 (
+  2      id NUMBER(5) PRIMARY KEY,
+  3      name VARCHAR2(50)
+  4  );
+CREATE TABLE usman33 (
+             *
+ERROR at line 1:
+ORA-00955: name is already used by an existing object 
+
+
+SQL> CREATE TABLE usman99 (
+  2      id NUMBER(5) PRIMARY KEY,
+  3      name VARCHAR2(50)
+  4  );
+
+Table created.
+
+SQL> create table tony33
+  2  
+SQL> CREATE TABLE tony33 (    id NUMBER(5) REFERENCES usman99(id));
+
+Table created.
+
+SQL> create table check33(no number(5))check;
+create table check33(no number(5))check
+                                  *
+ERROR at line 1:
+ORA-00922: missing or invalid option 
+
+
+SQL> create table check33(no number(5) check);
+create table check33(no number(5) check)
+                                       *
+ERROR at line 1:
+ORA-00906: missing left parenthesis 
+
+
+SQL> CREATE TABLE check33 (
+  2      no NUMBER(5) CHECK (no > 0)
+  3  );
+
+Table created.
+
+SQL> drop check33;
+drop check33
+     *
+ERROR at line 1:
+ORA-00950: invalid DROP option 
+
+
+SQL> truncate table check33;
+
+Table truncated.
+
+SQL> CREATE TABLE check33 (no NUMBER(5) CHECK (no > 0));
+CREATE TABLE check33 (no NUMBER(5) CHECK (no > 0))
+             *
+ERROR at line 1:
+ORA-00955: name is already used by an existing object 
+
+
+SQL> drop table check33;
+
+Table dropped.
+
+SQL>  CREATE TABLE check33 (no NUMBER(5) CHECK (no > 0));
+
+Table created.
+
+SQL> select count(job as total job,avg (sal)from emp group by job;
+select count(job as total job,avg (sal)from emp group by job
+                 *
+ERROR at line 1:
+ORA-00907: missing right parenthesis 
+
+
+SQL> select count(job as total job,avg (sal))from emp group by job;
+select count(job as total job,avg (sal))from emp group by job
+                 *
+ERROR at line 1:
+ORA-00907: missing right parenthesis 
+
+
+SQL>  select count(job as total job,avg (sal)from emp group by job);
+ select count(job as total job,avg (sal)from emp group by job)
+                  *
+ERROR at line 1:
+ORA-00907: missing right parenthesis 
+
+
+SQL> select deptno as total department,count(*) from emp group by deptno having count(*)>3;
+select deptno as total department,count(*) from emp group by deptno having count(*)>3
+                       *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected 
+
+
+SQL> select deptno,min(sal)from emp group by deptno having min(sal)>=1000;
+
+    DEPTNO   MIN(SAL)                                                           
+---------- ----------                                                           
+        10       1300                                                           
+
+SQL> 
