@@ -1,0 +1,121 @@
+select * from usman33;
+
+        ID NAME                                  MOBILE                         
+---------- --------------------------------- ----------                         
+POST                                                                            
+---------------------------------                                               
+         1 steve king                        4564356774                         
+manager                                                                         
+                                                                                
+
+SQL> select ID,NAME from usman33;
+
+        ID NAME                                                                 
+---------- ---------------------------------                                    
+         1 steve king                                                           
+
+SQL> select NAME,POST from usman33;
+
+NAME                              POST                                          
+--------------------------------- ---------------------------------             
+steve king                        manager                                       
+
+SQL> delete from usman33 where NAME;
+delete from usman33 where NAME
+                             *
+ERROR at line 1:
+ORA-00920: invalid relational operator 
+
+
+SQL> delete from usman33 where ID=1;
+
+1 row deleted.
+
+SQL> select * from usman33;
+
+no rows selected
+
+SQL> insert into usman33 values(1,'robin',35435434,'clerk');
+
+1 row created.
+
+SQL> insert into usman33 values(2,'ron',45355535,'cashier');
+
+1 row created.
+
+SQL> insert into usman33 values(3,'aujla',3453453,'singer');
+
+1 row created.
+
+SQL> select * from usman33;
+
+        ID NAME                                  MOBILE                         
+---------- --------------------------------- ----------                         
+POST                                                                            
+---------------------------------                                               
+         1 robin                               35435434                         
+clerk                                                                           
+                                                                                
+         2 ron                                 45355535                         
+cashier                                                                         
+                                                                                
+         3 aujla                                3453453                         
+singer                                                                          
+                                                                                
+
+SQL> commit;
+
+Commit complete.
+
+SQL> delete from usman33;
+
+3 rows deleted.
+
+SQL> create table HP33 (NO number(5) NOT NLL,NAME varchar(30));
+create table HP33 (NO number(5) NOT NLL,NAME varchar(30))
+                                    *
+ERROR at line 1:
+ORA-00905: missing keyword 
+
+
+SQL> create table HP33 (NO number(5)) not null (NAME varchar(30));
+create table HP33 (NO number(5)) not null (NAME varchar(30))
+                                 *
+ERROR at line 1:
+ORA-00922: missing or invalid option 
+
+
+SQL> create table HP33 (NO number(5))NOT NULL(NAME varchar(30));
+create table HP33 (NO number(5))NOT NULL(NAME varchar(30))
+                                *
+ERROR at line 1:
+ORA-00922: missing or invalid option 
+
+
+SQL> (NAME varchar(30));
+(NAME varchar(30))
+ *
+ERROR at line 1:
+ORA-00928: missing SELECT keyword 
+
+
+SQL>  create table HP33 (NO number(5))NOTNULL(NAME varchar(30));
+ create table HP33 (NO number(5))NOTNULL(NAME varchar(30))
+                                 *
+ERROR at line 1:
+ORA-00922: missing or invalid option 
+
+
+SQL> commit;
+
+Commit complete.
+
+SQL>  create table HP33 (NO number(5)NOT NULL,NAME varchar(30));
+
+Table created.
+
+SQL> commit;
+
+Commit complete.
+
+SQL> 

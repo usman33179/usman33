@@ -1,0 +1,144 @@
+select * from HP33;
+
+no rows selected
+
+SQL> select * from employee;
+select * from employee
+              *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+SQL> select * from employe2;
+select * from employe2
+              *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+SQL> 
+SQL> select * from tab;
+
+TNAME                          TABTYPE  CLUSTERID                               
+------------------------------ ------- ----------                               
+DEPT                           TABLE                                            
+EMP                            TABLE                                            
+BONUS                          TABLE                                            
+SALGRADE                       TABLE                                            
+EMPLOYEE7                      TABLE                                            
+DEPARTMENT                     TABLE                                            
+BIN$8oTDxJKZSwKVjeoF8x4U9Q==$0 TABLE                                            
+USMAN33                        TABLE                                            
+HP33                           TABLE                                            
+EMPLOYEEE                      TABLE                                            
+STUD                           TABLE                                            
+
+TNAME                          TABTYPE  CLUSTERID                               
+------------------------------ ------- ----------                               
+EMPLOYE                        TABLE                                            
+EMPLOYEE2                      TABLE                                            
+BIN$RYN2vJkxRAeXT0ZMvEgCqA==$0 TABLE                                            
+EMPLOYEE3                      TABLE                                            
+
+15 rows selected.
+
+SQL> selct * from employe;
+SP2-0734: unknown command beginning "selct * fr..." - rest of line ignored.
+SQL> select * from employe;
+
+no rows selected
+
+SQL> select * from usman33;
+
+no rows selected
+
+SQL> create table vk18(name varchar(45) primary key);
+
+Table created.
+
+SQL> create table us17(id number(3),name varchar(45),salary number(6), primary key(id,name,salary);
+create table us17(id number(3),name varchar(45),salary number(6), primary key(id,name,salary)
+                                                                                            *
+ERROR at line 1:
+ORA-00907: missing right parenthesis 
+
+
+SQL>  create table us17(id number(3),name varchar(45),salary number(6), primary key,(id,name,salary);
+ create table us17(id number(3),name varchar(45),salary number(6), primary key,(id,name,salary)
+                                                                              *
+ERROR at line 1:
+ORA-00906: missing left parenthesis 
+
+
+SQL> create table us17(id number(3),name varchar(45),salary number(6), primary ke(id,name,salary));
+create table us17(id number(3),name varchar(45),salary number(6), primary ke(id,name,salary))
+                                                                            *
+ERROR at line 1:
+ORA-00907: missing right parenthesis 
+
+
+SQL>  create table us17(id number(3),name varchar(45),salary number(6)),primary key,(id,name,salary);
+ create table us17(id number(3),name varchar(45),salary number(6)),primary key,(id,name,salary)
+                                                                  *
+ERROR at line 1:
+ORA-00922: missing or invalid option 
+
+
+SQL> create table us17(id number(3),name varchar(45),salary number(6))primary key,(id,name,salary);
+create table us17(id number(3),name varchar(45),salary number(6))primary key,(id,name,salary)
+                                                                 *
+ERROR at line 1:
+ORA-00922: missing or invalid option 
+
+
+SQL> create table us17(id number(3),name varchar(45),salary number(6),primary key,(id,name,salary));
+create table us17(id number(3),name varchar(45),salary number(6),primary key,(id,name,salary))
+                                                                            *
+ERROR at line 1:
+ORA-00906: missing left parenthesis 
+
+
+SQL> CREATE TABLE us17 (
+  2      id NUMBER(3),
+  3      name VARCHAR2(45),
+  4      salary NUMBER(6),
+  5      CONSTRAINT pk_us17 PRIMARY KEY (id, name, salary)
+  6  );
+
+Table created.
+
+SQL> create table us07(id number(5),name varchar2(45),salary number(6),primary key (id,name,salary));
+
+Table created.
+
+SQL> create table tony(id number(3) REFERENCES
+  2  
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL>  create table tony(id number(3) REFERENCES us07(id));
+ create table tony(id number(3) REFERENCES us07(id))
+                                                *
+ERROR at line 1:
+ORA-02270: no matching unique or primary key for this column-list 
+
+
+SQL>  create table tony(id number(5)REFERENCES us07(id));
+ create table tony(id number(5)REFERENCES us07(id))
+                                               *
+ERROR at line 1:
+ORA-02270: no matching unique or primary key for this column-list 
+
+
+SQL> ALTER TABLE us07
+  2  ADD CONSTRAINT pk_us07 PRIMARY KEY (id);
+ADD CONSTRAINT pk_us07 PRIMARY KEY (id)
+                       *
+ERROR at line 2:
+ORA-02260: table can have only one primary key 
+
+
+SQL> 

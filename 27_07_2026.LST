@@ -1,0 +1,96 @@
+desc us07;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ID                                        NOT NULL NUMBER(5)
+ NAME                                      NOT NULL VARCHAR2(45)
+ SALARY                                    NOT NULL NUMBER(6)
+
+SQL> alter table us07 modify id number(5) not null;
+
+Table altered.
+
+SQL> desc us07;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ID                                        NOT NULL NUMBER(5)
+ NAME                                      NOT NULL VARCHAR2(45)
+ SALARY                                    NOT NULL NUMBER(6)
+
+SQL> alter table stud add constraint pk_student primary key(roll no);
+alter table stud add constraint pk_student primary key(roll no)
+                                                            *
+ERROR at line 1:
+ORA-00907: missing right parenthesis 
+
+
+SQL>  alter table stud add constraint pk_student primary key(rollno);
+ alter table stud add constraint pk_student primary key(rollno)
+                                                        *
+ERROR at line 1:
+ORA-00904: "ROLLNO": invalid identifier 
+
+
+SQL> desc stud;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ NAME                                               VARCHAR2(18)
+ ROLL_NO                                            NUMBER(3)
+
+SQL>  alter table stud add constraint pk_student primary key(roll_no);
+
+Table altered.
+
+SQL> desc usman33;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ID                                                 NUMBER(5)
+ NAME                                               VARCHAR2(33)
+ MOBILE                                             NUMBER(10)
+ POST                                               VARCHAR2(33)
+
+SQL> create table tony33(id number(5)REFERENCE usman33(id));
+create table tony33(id number(5)REFERENCE usman33(id))
+                                *
+ERROR at line 1:
+ORA-00907: missing right parenthesis 
+
+
+SQL> create table tony33(id number(5),REFERENCE usman33(id));
+create table tony33(id number(5),REFERENCE usman33(id))
+                                                  *
+ERROR at line 1:
+ORA-00907: missing right parenthesis 
+
+
+SQL> 
+SQL> create table tony33(id number(5))REFERENCE usman33(id));
+create table tony33(id number(5))REFERENCE usman33(id))
+                                 *
+ERROR at line 1:
+ORA-00922: missing or invalid option 
+
+
+SQL> create table tony33(id number(5))REFERENCE usman33(id);
+create table tony33(id number(5))REFERENCE usman33(id)
+                                 *
+ERROR at line 1:
+ORA-00922: missing or invalid option 
+
+
+SQL> create table tony33(id number(5)),REFERENCE usman33(id);
+create table tony33(id number(5)),REFERENCE usman33(id)
+                                 *
+ERROR at line 1:
+ORA-00922: missing or invalid option 
+
+
+SQL> CREATE TABLE tony33 (    id NUMBER(5) REFERENCES usman33(id)); id NUMBER(5) REFERENCES usman33(
+  2  
+SQL> CREATE TABLE tony33 (    id NUMBER(5) REFERENCES usman33(id));
+CREATE TABLE tony33 (    id NUMBER(5) REFERENCES usman33(id))
+                                                         *
+ERROR at line 1:
+ORA-02270: no matching unique or primary key for this column-list 
+
+
+SQL> 
