@@ -1,0 +1,22 @@
+select e.empno,ename,d.dname,d.dname,d.loc from emp e join dept d on e.dept=d.deptno;
+select e.empno,ename,d.dname,d.dname,d.loc from emp e join dept d on e.dept=d.deptno
+                                                                     *
+ERROR at line 1:
+ORA-00904: "E"."DEPT": invalid identifier 
+
+
+SQL> select e.empno,ename,d.dname,d.dname,d.loc from emp e join dept d on e.depto=d.deptno;
+select e.empno,ename,d.dname,d.dname,d.loc from emp e join dept d on e.depto=d.deptno
+                                                                     *
+ERROR at line 1:
+ORA-00904: "E"."DEPTO": invalid identifier 
+
+
+SQL> select ename ,e.sal,s.grade from emp e join s on e.sal between s.losal and s.hisal;
+select ename ,e.sal,s.grade from emp e join s on e.sal between s.losal and s.hisal
+                                            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+SQL> 
